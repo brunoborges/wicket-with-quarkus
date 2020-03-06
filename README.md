@@ -1,8 +1,8 @@
 # code-with-quarkus project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project uses Quarkus and Apache Wicket.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+If you want to learn more, visit https://quarkus.io/ and https://wicket.apache.org .
 
 ## Running the application in dev mode
 
@@ -10,6 +10,10 @@ You can run your application in dev mode that enables live coding using:
 ```
 ./mvnw quarkus:dev
 ```
+
+Visit the Wicket page at http://localhost:8080
+
+Visit the Quarkus REST endpoint at http://localhost:8080/api/hello
 
 ## Packaging and running the application
 
@@ -19,7 +23,7 @@ Be aware that it’s not an _über-jar_ as the dependencies are copied into the 
 
 The application is now runnable using `java -jar target/code-with-quarkus-1.0.0-SNAPSHOT-runner.jar`.
 
-## Creating a native executable
+## Creating a native executable (NOT TESTED WITH WICKET)
 
 You can create a native executable using: `./mvnw package -Pnative`.
 
