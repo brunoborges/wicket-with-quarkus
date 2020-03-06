@@ -21,4 +21,5 @@ public class HomePage extends WebPage {
 		var hello = new Label("hello", new MyComponent().sayHello("Bruno"));
 		add(hello);
 	}
+
 }

@@ -4,9 +4,11 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.acme</groupId>
   <artifactId>code-with-quarkus</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
@@ -21,6 +23,7 @@
     <surefire-plugin.version>2.22.1</surefire-plugin.version>
     <wicket.version>8.7.0</wicket.version>
   </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -32,6 +35,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -56,14 +60,8 @@
       <artifactId>wicket-core</artifactId>
       <version>${wicket.version}</version>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>org.apache.wicket</groupId>
-      <artifactId>wicket-cdi</artifactId>
-      <version>${wicket.version}</version>
-    </dependency>
-  -->
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -92,7 +90,22 @@
         </configuration>
       </plugin>
     </plugins>
+
+    <resources>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
+
   <profiles>
     <profile>
       <id>native</id>
