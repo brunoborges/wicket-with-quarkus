@@ -1,18 +1,18 @@
 package com.mycompany;
 
-import org.apache.wicket.request.mapper.parameter.PageParameters;
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 import org.apache.wicket.markup.html.basic.Label;
 
 import org.acme.MyComponent;
 import org.apache.wicket.markup.html.WebPage;
 
+@RegisterForReflection
 public class HomePage extends WebPage {
 
 	private static final long serialVersionUID = 1L;
 
-	public HomePage(final PageParameters parameters) {
-		super(parameters);
-
+	public HomePage() {
 		var version = getApplication().getFrameworkSettings().getVersion();
 		var versionLabel = new Label("version", version);
 
