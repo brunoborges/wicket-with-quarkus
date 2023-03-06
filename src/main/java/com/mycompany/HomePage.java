@@ -12,13 +12,16 @@ public class HomePage extends WebPage {
 
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	private MyComponent myComponent;
+
 	public HomePage() {
 		var version = getApplication().getFrameworkSettings().getVersion();
 		var versionLabel = new Label("version", version);
 
 		add(versionLabel);
 
-		var hello = new Label("hello", new MyComponent().sayHello("Bruno"));
+		var hello = new Label("hello", myComponent.sayHello("Bruno"));
 		add(hello);
 	}
 
