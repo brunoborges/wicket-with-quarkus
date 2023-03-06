@@ -18,7 +18,7 @@ public class WicketApplication extends WebApplication {
     @Override
     protected void init() {
         super.init();
-  		getComponentInstantiationListeners().add(new IComponentInstantiationListener() {
+        getComponentInstantiationListeners().add(new IComponentInstantiationListener() {
           @Override
           public void onInstantiation(Component component) {
               Arrays.stream(component.getClass().getDeclaredFields()).forEach(x-> {
