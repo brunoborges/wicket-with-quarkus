@@ -1,11 +1,12 @@
 package com.mycompany;
 
-import io.quarkus.runtime.annotations.RegisterForReflection;
-
-import org.apache.wicket.markup.html.basic.Label;
+import javax.inject.Inject;
 
 import org.acme.MyComponent;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+
+import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection
 public class HomePage extends WebPage {
@@ -16,12 +17,12 @@ public class HomePage extends WebPage {
 	private MyComponent myComponent;
 
 	public HomePage() {
-		var version = getApplication().getFrameworkSettings().getVersion();
-		var versionLabel = new Label("version", version);
+		final var version = getApplication().getFrameworkSettings().getVersion();
+		final var versionLabel = new Label("version", version);
 
 		add(versionLabel);
 
-		var hello = new Label("hello", myComponent.sayHello("Bruno"));
+		final var hello = new Label("hello", myComponent.sayHello("Bruno"));
 		add(hello);
 	}
 
