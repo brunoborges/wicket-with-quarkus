@@ -20,7 +20,7 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>3.7.3</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
-    <wicket.version>10.0.0-M2</wicket.version>
+    <wicket.version>10.1.0</wicket.version>
   </properties>
 
   <dependencyManagement>
